@@ -53,7 +53,6 @@ The-LLM-/
 │ ├── services/ # OpenRouter API logic
 │ ├── models/ # Pydantic schemas
 │ ├── utils/ # Helper functions
-│ ├── .env.example # Environment variable template
 │ └── requirements.txt
 │
 ├── frontend/ # Next.js frontend
@@ -83,24 +82,22 @@ The-LLM-/
 ```bash
 git clone https://github.com/uncleBandit/The-LLM-.git
 cd The-LLM-
-2. Backend Setup (FastAPI)
-bash
-Copy
-Edit
-cd backend
 python -m venv .venv
 # On macOS/Linux:
 source .venv/bin/activate
 # On Windows:
 .venv\Scripts\activate
 
+2. Backend Setup (FastAPI)
+cd backend
+
 pip install -r requirements.txt
 cp .env.example .env
 Fill in the required .env variables (like your OpenRouter key).
 
 Run the backend:
-
 uvicorn main:app --reload
+uvicorn backend.app.main:app --reload run this in project root
 FastAPI docs available at:
 
 
